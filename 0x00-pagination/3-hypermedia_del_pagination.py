@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deletion-resilient hypermedia pagination
+"""3. Deletion-resilient hypermedia pagination
 """
 import csv
 from typing import Dict, List
@@ -47,9 +47,9 @@ class Server:
         page_data = []
         data_count = 0
         next_index = None
-        start = index if index else 0
+        start_index = index if index else 0
         for i, item in data.items():
-            if i >= start and data_count < page_size:
+            if i >= start_index and data_count < page_size:
                 page_data.append(item)
                 data_count += 1
                 continue
