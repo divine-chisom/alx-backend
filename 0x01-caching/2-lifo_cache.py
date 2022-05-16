@@ -21,7 +21,6 @@ class LIFOCache(BaseCaching):
         """Adds an item in the cache.
         """
         if key and item:
-            self.cache_data[key] = item
             if len(self.cache_data) + 1 > BaseCaching.MAX_ITEMS:
                 last_key, _ = self.cache_data.popitem(True)
                 print("DISCARD:", last_key)
