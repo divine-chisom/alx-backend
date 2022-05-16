@@ -50,7 +50,6 @@ class Server:
         """Retrieves information about a page.
         """
         page_data = self.get_page(page, page_size)
-        start_index, end_index = index_range(page, page_size)
         total_pages = math.ceil(len(self.__dataset) / page_size)
         page_info = {
             'page_size': len(page_data),
